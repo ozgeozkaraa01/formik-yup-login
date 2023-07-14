@@ -17,7 +17,7 @@ const RegisterPage = () => {
   const validationSchema = Yup.object({
     email: Yup.string()
       .email("Invalid email address")
-      .required("Email is required"),
+      .required("E-mail address is required"),
     password: Yup.string().required("Password is required"),
   });
 
@@ -30,6 +30,9 @@ const RegisterPage = () => {
       data-aos-anchor-placement="top-bottom"
     >
       <div className="container text-center mx-auto mt-32 max-w-md w-screen">
+        <h1 className="text-3xl font-semibold text-gray-700">
+          Create an account
+        </h1>
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
