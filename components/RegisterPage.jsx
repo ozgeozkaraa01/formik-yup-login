@@ -22,7 +22,13 @@ const RegisterPage = () => {
   });
 
   return (
-    <div className="flex-1">
+    <div
+      className="flex-1"
+      data-aos="fade-up"
+      data-aos-offset="180"
+      data-aos-duration="600"
+      data-aos-anchor-placement="top-bottom"
+    >
       <div className="container text-center mx-auto mt-32 max-w-md w-screen">
         <Formik
           initialValues={initialValues}

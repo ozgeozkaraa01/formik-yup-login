@@ -1,7 +1,9 @@
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const LoginPage = () => {
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -21,8 +23,21 @@ const LoginPage = () => {
     password: Yup.string().required("Password is required"),
   });
 
+  useEffect(() => {
+    AOS.init({
+      once: true,
+    });
+    AOS.refresh();
+  }, []);
+
   return (
-    <div className="flex-1">
+    <div
+      className="flex-1"
+      data-aos="fade-up"
+      data-aos-offset="180"
+      data-aos-duration="600"
+      data-aos-anchor-placement="top-bottom"
+    >
       <div className="container text-center mx-auto mt-32 max-w-md w-screen">
         <Formik
           initialValues={initialValues}
